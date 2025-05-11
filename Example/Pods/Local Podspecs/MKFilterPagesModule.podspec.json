@@ -1,9 +1,9 @@
 {
   "name": "MKFilterPagesModule",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "A short description of MKFilterPagesModule.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/lovexiaoxia/MKFilterPagesModule",
+  "homepage": "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "lovexiaoxia": "aadyx2007@163.com"
   },
   "source": {
-    "git": "https://github.com/lovexiaoxia/MKFilterPagesModule.git",
-    "tag": "0.0.1"
+    "git": "git@github.com:MOKO-iOS-Base-Library/MKFilterPagesModule.git",
+    "tag": "0.0.2"
   },
   "platforms": {
     "ios": "14.0"

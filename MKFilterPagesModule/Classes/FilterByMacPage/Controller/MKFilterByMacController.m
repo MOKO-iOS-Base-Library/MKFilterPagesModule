@@ -252,7 +252,7 @@ MKFilterEditSectionHeaderViewDelegate>
 #pragma mark - UI
 - (void)loadSubViews {
     self.defaultTitle = self.protocol.pageTitle;
-    [self.rightButton setImage:LOADICON(@"MKFilterPagesModule", @"MKFilterByMacController", @"mk_slotSaveIcon.png") forState:UIControlStateNormal];
+    [self.rightButton setImage:LOADICON(@"MKFilterPagesModule", @"MKFilterByMacController", @"mk_filterPages_slotSaveIcon.png") forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
