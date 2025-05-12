@@ -213,7 +213,7 @@ MKTextButtonCellDelegate>
         return;
     }
     MKFilterByRawDataCellModel *cellModel = self.section1List[index];
-    if (textType == mk_filterByRawDataTextTypeRawDataType) {
+    if (textType == mk_filterByRawDataTextTypeDataType) {
         //过滤类型输入框内容发生改变
         cellModel.dataType = textValue;
         return;
