@@ -23,6 +23,7 @@
 #import "MKFilterByMacController.h"
 #import "MKFilterByMacProtocol.h"
 #import "MKFilterByOtherController.h"
+#import "MKFilterRawAdvDataModel.h"
 #import "MKFilterByOtherProtocol.h"
 #import "MKFilterByPirController.h"
 #import "MKFilterByPirProtocol.h"

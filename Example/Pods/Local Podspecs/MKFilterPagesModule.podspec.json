@@ -1,6 +1,6 @@
 {
   "name": "MKFilterPagesModule",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "summary": "A short description of MKFilterPagesModule.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "git@github.com:MOKO-iOS-Base-Library/MKFilterPagesModule.git",
-    "tag": "0.0.2"
+    "tag": "0.0.4"
   },
   "platforms": {
     "ios": "14.0"
@@ -156,8 +156,17 @@
           }
         },
         {
+          "name": "Model",
+          "source_files": "MKFilterPagesModule/Classes/FilterByOtherPage/Model/**"
+        },
+        {
           "name": "Protocol",
-          "source_files": "MKFilterPagesModule/Classes/FilterByOtherPage/Protocol/**"
+          "source_files": "MKFilterPagesModule/Classes/FilterByOtherPage/Protocol/**",
+          "dependencies": {
+            "MKFilterPagesModule/FilterByOtherPage/Model": [
+
+            ]
+          }
         }
       ]
     },

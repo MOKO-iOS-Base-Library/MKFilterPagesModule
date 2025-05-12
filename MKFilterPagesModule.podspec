@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MKFilterPagesModule'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = 'A short description of MKFilterPagesModule.'
 
 # This description is used to generate tags and improve search results.
@@ -118,11 +118,16 @@ TODO: Add long description of the pod here.
       sss.source_files = 'MKFilterPagesModule/Classes/FilterByOtherPage/Controller/**'
     
       sss.dependency 'MKFilterPagesModule/FilterByOtherPage/Protocol'
-      
+    end
+    
+    ss.subspec 'Model' do |sss|
+      sss.source_files = 'MKFilterPagesModule/Classes/FilterByOtherPage/Model/**'
     end
   
     ss.subspec 'Protocol' do |sss|
       sss.source_files = 'MKFilterPagesModule/Classes/FilterByOtherPage/Protocol/**'
+      
+      sss.dependency 'MKFilterPagesModule/FilterByOtherPage/Model'
     end
   end
   

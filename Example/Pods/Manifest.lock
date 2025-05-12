@@ -405,199 +405,205 @@ PODS:
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKFilterPagesModule (0.0.2):
+  - MKFilterPagesModule (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByAdvNamePage (= 0.0.2)
-    - MKFilterPagesModule/FilterByBeaconPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByBXPButtonPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByBXPSensorInfoPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByBXPTagPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByMacPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByOtherPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByPirPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByTLMPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByTofPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByUIDPage (= 0.0.2)
-    - MKFilterPagesModule/FilterByURLPage (= 0.0.2)
+    - MKFilterPagesModule/FilterByAdvNamePage (= 0.0.4)
+    - MKFilterPagesModule/FilterByBeaconPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByBXPButtonPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByBXPSensorInfoPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByBXPTagPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByMacPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByOtherPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByPirPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByTLMPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByTofPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByUIDPage (= 0.0.4)
+    - MKFilterPagesModule/FilterByURLPage (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByAdvNamePage (0.0.2):
+  - MKFilterPagesModule/FilterByAdvNamePage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByAdvNamePage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByAdvNamePage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByAdvNamePage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByAdvNamePage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByAdvNamePage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByAdvNamePage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByAdvNamePage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByAdvNamePage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByAdvNamePage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBeaconPage (0.0.2):
+  - MKFilterPagesModule/FilterByBeaconPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByBeaconPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByBeaconPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByBeaconPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByBeaconPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBeaconPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByBeaconPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByBeaconPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBeaconPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByBeaconPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBXPButtonPage (0.0.2):
+  - MKFilterPagesModule/FilterByBXPButtonPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByBXPButtonPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByBXPButtonPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByBXPButtonPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByBXPButtonPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBXPButtonPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByBXPButtonPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByBXPButtonPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBXPButtonPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByBXPButtonPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBXPSensorInfoPage (0.0.2):
+  - MKFilterPagesModule/FilterByBXPSensorInfoPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByBXPSensorInfoPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByBXPSensorInfoPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByBXPSensorInfoPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByBXPSensorInfoPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBXPSensorInfoPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByBXPSensorInfoPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByBXPSensorInfoPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBXPSensorInfoPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByBXPSensorInfoPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBXPTagPage (0.0.2):
+  - MKFilterPagesModule/FilterByBXPTagPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByBXPTagPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByBXPTagPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByBXPTagPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByBXPTagPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBXPTagPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByBXPTagPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByBXPTagPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByBXPTagPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByBXPTagPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByMacPage (0.0.2):
+  - MKFilterPagesModule/FilterByMacPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByMacPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByMacPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByMacPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByMacPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByMacPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByMacPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByMacPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByMacPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByMacPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByOtherPage (0.0.2):
+  - MKFilterPagesModule/FilterByOtherPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByOtherPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByOtherPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByOtherPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByOtherPage/Model (= 0.0.4)
+    - MKFilterPagesModule/FilterByOtherPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByOtherPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByOtherPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByOtherPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByOtherPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByOtherPage/Model (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByPirPage (0.0.2):
+  - MKFilterPagesModule/FilterByOtherPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByPirPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByPirPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByOtherPage/Model
     - MLInputDodger
-  - MKFilterPagesModule/FilterByPirPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByPirPage (0.0.4):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKFilterPagesModule/FilterByPirPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByPirPage/Protocol (= 0.0.4)
+    - MLInputDodger
+  - MKFilterPagesModule/FilterByPirPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByPirPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByPirPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByPirPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByTLMPage (0.0.2):
+  - MKFilterPagesModule/FilterByTLMPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByTLMPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByTLMPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByTLMPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByTLMPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByTLMPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByTLMPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByTLMPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByTLMPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByTLMPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByTofPage (0.0.2):
+  - MKFilterPagesModule/FilterByTofPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByTofPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByTofPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByTofPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByTofPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByTofPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByTofPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByTofPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByTofPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByTofPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByUIDPage (0.0.2):
+  - MKFilterPagesModule/FilterByUIDPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByUIDPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByUIDPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByUIDPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByUIDPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByUIDPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByUIDPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByUIDPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByUIDPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByUIDPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKFilterPagesModule/FilterByURLPage (0.0.2):
+  - MKFilterPagesModule/FilterByURLPage (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKFilterPagesModule/FilterByURLPage/Controller (= 0.0.2)
-    - MKFilterPagesModule/FilterByURLPage/Protocol (= 0.0.2)
+    - MKFilterPagesModule/FilterByURLPage/Controller (= 0.0.4)
+    - MKFilterPagesModule/FilterByURLPage/Protocol (= 0.0.4)
     - MLInputDodger
-  - MKFilterPagesModule/FilterByURLPage/Controller (0.0.2):
+  - MKFilterPagesModule/FilterByURLPage/Controller (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKFilterPagesModule/FilterByURLPage/Protocol
     - MLInputDodger
-  - MKFilterPagesModule/FilterByURLPage/Protocol (0.0.2):
+  - MKFilterPagesModule/FilterByURLPage/Protocol (0.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
@@ -633,7 +639,7 @@ SPEC CHECKSUMS:
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   MKBaseModuleLibrary: 2b79bcae588c755588413fbb643b510253271b23
   MKCustomUIModule: 8426eba1d3178b06d92741d31da32502920fb8fa
-  MKFilterPagesModule: 0a49b5d85fe4a2a9e17d62325d4cb9d81c9c5083
+  MKFilterPagesModule: 501f5fa890f8379bde00a69267e14d1aa2dcb7fb
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
