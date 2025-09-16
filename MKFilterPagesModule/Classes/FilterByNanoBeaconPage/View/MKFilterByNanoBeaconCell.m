@@ -15,10 +15,6 @@
 
 #import "MKPickerView.h"
 
-static CGFloat const offset_X = 15.f;
-static CGFloat const selectButtonWidth = 130.f;
-static CGFloat const selectButtonHeight = 30.f;
-
 @implementation MKFilterByNanoBeaconCellModel
 @end
 
@@ -52,17 +48,17 @@ static CGFloat const selectButtonHeight = 30.f;
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self.msgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(offset_X);
+        make.left.mas_equalTo(15.f);
         make.right.mas_equalTo(self.contentView.mas_centerX).mas_offset(-5.f);
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
         make.height.mas_equalTo(MKFont(15.f).lineHeight);
     }];
     
     [self.selectedButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(-offset_X);
+        make.right.mas_equalTo(-15.f);
         make.left.mas_equalTo(self.contentView.mas_centerX).mas_offset(5.f);
         make.centerY.mas_equalTo(self.msgLabel.mas_centerY);
-        make.height.mas_equalTo(selectButtonHeight);
+        make.height.mas_equalTo(30.f);
     }];
 }
 
@@ -118,7 +114,7 @@ static CGFloat const selectButtonHeight = 30.f;
 - (UIButton *)selectedButton {
     if (!_selectedButton) {
         _selectedButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_selectedButton.titleLabel setFont:MKFont(15.f)];
+        [_selectedButton.titleLabel setFont:MKFont(13.f)];
         [_selectedButton setTitleColor:COLOR_WHITE_MACROS forState:UIControlStateNormal];
         [_selectedButton setBackgroundColor:NAVBAR_COLOR_MACROS];
         [_selectedButton.layer setMasksToBounds:YES];
