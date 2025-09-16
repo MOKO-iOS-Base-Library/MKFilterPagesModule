@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MKFilterPagesModule'
-  s.version          = '0.0.5'
+  s.version          = '0.0.6'
   s.summary          = 'A short description of MKFilterPagesModule.'
 
 # This description is used to generate tags and improve search results.
@@ -110,6 +110,25 @@ TODO: Add long description of the pod here.
   
     ss.subspec 'Protocol' do |sss|
       sss.source_files = 'MKFilterPagesModule/Classes/FilterByMacPage/Protocol/**'
+    end
+  end
+  
+  s.subspec 'FilterByNanoBeaconPage' do |ss|
+    ss.subspec 'Controller' do |sss|
+      sss.source_files = 'MKFilterPagesModule/Classes/FilterByNanoBeaconPage/Controller/**'
+    
+      sss.dependency 'MKFilterPagesModule/FilterByNanoBeaconPage/Protocol'
+      
+      sss.dependency 'MKFilterPagesModule/FilterByNanoBeaconPage/View'
+      
+    end
+  
+    ss.subspec 'Protocol' do |sss|
+      sss.source_files = 'MKFilterPagesModule/Classes/FilterByNanoBeaconPage/Protocol/**'
+    end
+    
+    ss.subspec 'View' do |sss|
+      sss.source_files = 'MKFilterPagesModule/Classes/FilterByNanoBeaconPage/View/**'
     end
   end
   
