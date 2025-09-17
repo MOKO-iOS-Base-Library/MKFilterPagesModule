@@ -94,6 +94,11 @@
     }
     self.msgLabel.text = SafeStr(_dataModel.msg);
     [self.selectedButton setTitle:_dataModel.dataList[_dataModel.dataListIndex] forState:UIControlStateNormal];
+    if (_dataModel.buttonLabelFont) {
+        [self.selectedButton.titleLabel setFont:_dataModel.buttonLabelFont];
+    }else {
+        [self.selectedButton.titleLabel setFont:MKFont(15.f)];
+    }
     
     [self.selectedButton setBackgroundColor:NAVBAR_COLOR_MACROS];
     [self.selectedButton setTitleColor:COLOR_WHITE_MACROS forState:UIControlStateNormal];
