@@ -49,14 +49,14 @@
     [super layoutSubviews];
     [self.msgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15.f);
-        make.right.mas_equalTo(self.contentView.mas_centerX).mas_offset(-5.f);
+        make.right.mas_equalTo(self.contentView.mas_centerX).mas_offset(-10.f);
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
         make.height.mas_equalTo(MKFont(15.f).lineHeight);
     }];
     
     [self.selectedButton mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-15.f);
-        make.left.mas_equalTo(self.contentView.mas_centerX).mas_offset(5.f);
+        make.left.mas_equalTo(self.contentView.mas_centerX);
         make.centerY.mas_equalTo(self.msgLabel.mas_centerY);
         make.height.mas_equalTo(30.f);
     }];
@@ -94,11 +94,6 @@
     }
     self.msgLabel.text = SafeStr(_dataModel.msg);
     [self.selectedButton setTitle:_dataModel.dataList[_dataModel.dataListIndex] forState:UIControlStateNormal];
-    if (_dataModel.buttonLabelFont) {
-        [self.selectedButton.titleLabel setFont:_dataModel.buttonLabelFont];
-    }else {
-        [self.selectedButton.titleLabel setFont:MKFont(15.f)];
-    }
     
     [self.selectedButton setBackgroundColor:NAVBAR_COLOR_MACROS];
     [self.selectedButton setTitleColor:COLOR_WHITE_MACROS forState:UIControlStateNormal];
@@ -119,7 +114,7 @@
 - (UIButton *)selectedButton {
     if (!_selectedButton) {
         _selectedButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_selectedButton.titleLabel setFont:MKFont(13.f)];
+        [_selectedButton.titleLabel setFont:MKFont(12.f)];
         [_selectedButton setTitleColor:COLOR_WHITE_MACROS forState:UIControlStateNormal];
         [_selectedButton setBackgroundColor:NAVBAR_COLOR_MACROS];
         [_selectedButton.layer setMasksToBounds:YES];

@@ -35,9 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 当前数据源dataList选中的index,右侧按钮会显示dataList[dataListIndex]
 @property (nonatomic, assign)NSInteger dataListIndex;
 
-/// 右侧按钮的title字体大小，默认15
-@property (nonatomic, strong)UIFont *buttonLabelFont;
-
 @end
 
 @protocol MKFilterByNanoBeaconCellDelegate <NSObject>
