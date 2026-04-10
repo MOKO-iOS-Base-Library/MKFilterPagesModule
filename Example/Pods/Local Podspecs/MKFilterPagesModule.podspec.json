@@ -1,6 +1,6 @@
 {
   "name": "MKFilterPagesModule",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "summary": "A short description of MKFilterPagesModule.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "git@github.com:MOKO-iOS-Base-Library/MKFilterPagesModule.git",
-    "tag": "0.0.6"
+    "tag": "0.0.9"
   },
   "platforms": {
     "ios": "14.0"
@@ -24,9 +24,15 @@
     ]
   },
   "dependencies": {
-    "MKBaseModuleLibrary": [],
-    "MKCustomUIModule": [],
-    "MLInputDodger": []
+    "MKBaseModuleLibrary": [
+
+    ],
+    "MKCustomUIModule": [
+
+    ],
+    "MLInputDodger": [
+
+    ]
   },
   "subspecs": [
     {
@@ -36,7 +42,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByAdvNamePage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByAdvNamePage/Protocol": []
+            "MKFilterPagesModule/FilterByAdvNamePage/Protocol": [
+
+            ]
           }
         },
         {
@@ -52,7 +60,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByBeaconPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByBeaconPage/Protocol": []
+            "MKFilterPagesModule/FilterByBeaconPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -68,7 +78,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByBXPButtonPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByBXPButtonPage/Protocol": []
+            "MKFilterPagesModule/FilterByBXPButtonPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -84,7 +96,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByBXPSensorInfoPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByBXPSensorInfoPage/Protocol": []
+            "MKFilterPagesModule/FilterByBXPSensorInfoPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -100,7 +114,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByBXPTagPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByBXPTagPage/Protocol": []
+            "MKFilterPagesModule/FilterByBXPTagPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -116,7 +132,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByMacPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByMacPage/Protocol": []
+            "MKFilterPagesModule/FilterByMacPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -132,8 +150,12 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByNanoBeaconPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByNanoBeaconPage/Protocol": [],
-            "MKFilterPagesModule/FilterByNanoBeaconPage/View": []
+            "MKFilterPagesModule/FilterByNanoBeaconPage/Protocol": [
+
+            ],
+            "MKFilterPagesModule/FilterByNanoBeaconPage/View": [
+
+            ]
           }
         },
         {
@@ -153,7 +175,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByOtherPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByOtherPage/Protocol": []
+            "MKFilterPagesModule/FilterByOtherPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -164,7 +188,9 @@
           "name": "Protocol",
           "source_files": "MKFilterPagesModule/Classes/FilterByOtherPage/Protocol/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByOtherPage/Model": []
+            "MKFilterPagesModule/FilterByOtherPage/Model": [
+
+            ]
           }
         }
       ]
@@ -176,7 +202,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByPirPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByPirPage/Protocol": []
+            "MKFilterPagesModule/FilterByPirPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -192,7 +220,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByTofPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByTofPage/Protocol": []
+            "MKFilterPagesModule/FilterByTofPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -208,7 +238,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByTLMPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByTLMPage/Protocol": []
+            "MKFilterPagesModule/FilterByTLMPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -224,7 +256,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByUIDPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByUIDPage/Protocol": []
+            "MKFilterPagesModule/FilterByUIDPage/Protocol": [
+
+            ]
           }
         },
         {
@@ -240,7 +274,9 @@
           "name": "Controller",
           "source_files": "MKFilterPagesModule/Classes/FilterByURLPage/Controller/**",
           "dependencies": {
-            "MKFilterPagesModule/FilterByURLPage/Protocol": []
+            "MKFilterPagesModule/FilterByURLPage/Protocol": [
+
+            ]
           }
         },
         {
