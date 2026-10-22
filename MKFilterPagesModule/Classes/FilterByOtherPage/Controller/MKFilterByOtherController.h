@@ -6,7 +6,7 @@
 //  Copyright © 2025 aadyx2007@163.com. All rights reserved.
 //
 
-#import <MKBaseModuleLibrary/MKBaseViewController.h>
+#import "MKBaseViewController.h"
 
 #import "MKFilterByOtherProtocol.h"
 

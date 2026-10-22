@@ -6,7 +6,7 @@
 //  Copyright © 2025 lovexiaoxia. All rights reserved.
 //
 
-#import <MKBaseModuleLibrary/MKBaseViewController.h>
+#import "MKBaseViewController.h"
 
 #import "MKFilterByBXPSensorInfoProtocol.h"
 
