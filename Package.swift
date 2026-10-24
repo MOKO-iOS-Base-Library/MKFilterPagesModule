@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "MKFilterPagesModule",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v18)
     ],
     products: [
         .library(
@@ -13,8 +13,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/MOKO-iOS-Base-Library/MKBaseModuleLibrary.git", from: "2.2.14"),
-        .package(url: "https://github.com/MOKO-iOS-Base-Library/MKCustomUIModule.git", from: "2.1.14"),
+        .package(url: "https://github.com/MOKO-iOS-Base-Library/MKBaseModuleLibrary.git", from: "2.2.19"),
+        .package(url: "https://github.com/MOKO-iOS-Base-Library/MKCustomUIModule.git", from: "2.1.17"),
     ],
     targets: [
         .target(
@@ -24,6 +24,7 @@ let package = Package(
                 "MKCustomUIModule",
             ],
             path: "MKFilterPagesModule",
+            exclude: ["Classes/Vendor"],
             sources: ["Classes"],
             resources: [.process("Assets")],
             publicHeadersPath: "Classes",
@@ -69,7 +70,6 @@ let package = Package(
                 .headerSearchPath("Classes/FilterByURLPage"),
                 .headerSearchPath("Classes/FilterByURLPage/Controller"),
                 .headerSearchPath("Classes/FilterByURLPage/Protocol"),
-                .headerSearchPath("Classes/Vendor/MLInputDodger"),
             ],
             linkerSettings: [
                 .linkedFramework("UIKit"),
