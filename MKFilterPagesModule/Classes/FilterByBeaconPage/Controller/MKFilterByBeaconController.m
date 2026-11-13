@@ -207,6 +207,8 @@ MKFilterBeaconCellDelegate>
         cellModel.msg = @"iBeacon";
     }else if (self.protocol.pageType == mk_filterByBeaconPageType_bxpBeacon) {
         cellModel.msg = @"BXP-iBeacon";
+    }else if (self.protocol.pageType == mk_filterByBeaconPageType_bxpBeaconAcc) {
+        cellModel.msg = @"BXP-iBeacon&ACC";
     }
     cellModel.isOn = self.protocol.isOn;
     [self.section0List addObject:cellModel];
@@ -219,6 +221,8 @@ MKFilterBeaconCellDelegate>
         cellModel.msg = @"iBeacon UUID";
     }else if (self.protocol.pageType == mk_filterByBeaconPageType_bxpBeacon) {
         cellModel.msg = @"BXP-iBeacon UUID";
+    }else if (self.protocol.pageType == mk_filterByBeaconPageType_bxpBeaconAcc) {
+        cellModel.msg = @"BXP-iBeacon&ACC UUID";
     }
     cellModel.textFieldType = mk_hexCharOnly;
     cellModel.textPlaceholder = @"0~16 Bytes";
@@ -246,6 +250,9 @@ MKFilterBeaconCellDelegate>
     }else if (self.protocol.pageType == mk_filterByBeaconPageType_bxpBeacon) {
         cellModel1.msg = @"BXP-iBeacon Major";
         cellModel2.msg = @"BXP-iBeacon Minor";
+    }else if (self.protocol.pageType == mk_filterByBeaconPageType_bxpBeaconAcc) {
+        cellModel1.msg = @"BXP-iBeacon&ACC Major";
+        cellModel2.msg = @"BXP-iBeacon&ACC Minor";
     }
 }
 

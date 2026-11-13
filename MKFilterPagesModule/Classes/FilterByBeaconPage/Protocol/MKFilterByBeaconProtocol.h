@@ -2,6 +2,7 @@
 typedef NS_ENUM(NSInteger, mk_filterByBeaconPageType) {
     mk_filterByBeaconPageType_beacon,
     mk_filterByBeaconPageType_bxpBeacon,
+    mk_filterByBeaconPageType_bxpBeaconAcc,
 };
 
 @protocol MKFilterByBeaconProtocol <NSObject>
