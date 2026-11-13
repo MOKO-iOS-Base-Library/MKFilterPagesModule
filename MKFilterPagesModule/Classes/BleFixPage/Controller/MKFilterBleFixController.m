@@ -106,14 +106,18 @@ MKFilterRelationshipCellDelegate>
         if (indexPath.row == 0) {
             [self.protocol pushFilterByMACControllerWithNav:self.navigationController];
         } else if (indexPath.row == 1) {
-            [self.protocol pushFilterByAdvNameControllerWithNav:self.navigationController];
+            if ([self.protocol respondsToSelector:@selector(pushFilterByAdvNameControllerWithNav:)]) {
+                [self.protocol pushFilterByAdvNameControllerWithNav:self.navigationController];
+            }
         } else if (indexPath.row == 2) {
             [self.protocol pushFilterByRawDataControllerWithNav:self.navigationController];
         }
         return;
     }
     if (indexPath.section == 5) {
-        [self.protocol pushPayloadContentsControllerWithNav:self.navigationController];
+        if ([self.protocol respondsToSelector:@selector(pushPayloadContentsControllerWithNav:)]) {
+            [self.protocol pushPayloadContentsControllerWithNav:self.navigationController];
+        }
         return;
     }
 }
@@ -192,7 +196,9 @@ MKFilterRelationshipCellDelegate>
     if (index == 0) {
         [self.protocol priorityChanged:dataListIndex];
     } else if (index == 1) {
-        [self.protocol phyChanged:dataListIndex];
+        if ([self.protocol respondsToSelector:@selector(phyChanged:)]) {
+            [self.protocol phyChanged:dataListIndex];
+        }
     } else if (index == 2) {
         [self.protocol relationshipChanged:dataListIndex];
     }
@@ -234,12 +240,15 @@ MKFilterRelationshipCellDelegate>
     [self loadSection2Datas];
     [self loadSection3Datas];
     [self loadSection4Datas];
-    if ([self.protocol hasPayloadContentsSection]) {
+
+    BOOL hasSection5 = ([self.protocol respondsToSelector:@selector(hasPayloadContentsSection)]
+                        && [self.protocol hasPayloadContentsSection]);
+    if (hasSection5) {
         [self loadSection5Datas];
     }
 
-    // 构建 header（6 个 section，但 section5 可能不存在 → 只有 5 个 header）
-    NSUInteger sectionCount = [self.protocol hasPayloadContentsSection] ? 6 : 5;
+    // 构建 header：section0~4 始终存在（5 个），section5 可选
+    NSUInteger sectionCount = hasSection5 ? 6 : 5;
     [self.headerList removeAllObjects];
     for (NSUInteger i = 0; i < sectionCount; i++) {
         MKTableSectionLineHeaderModel *headerModel = [[MKTableSectionLineHeaderModel alloc] init];
@@ -271,19 +280,26 @@ MKFilterRelationshipCellDelegate>
 }
 
 - (void)loadSection1Datas {
-    MKFilterRelationshipCellModel *cellModel1 = [[MKFilterRelationshipCellModel alloc] init];
-    cellModel1.index = 0;
-    cellModel1.msg = @"Bluetooth Fix Mechanism";
-    cellModel1.dataList = [self.protocol priorityDataList];
-    cellModel1.dataListIndex = self.protocol.priority;
-    [self.section1List addObject:cellModel1];
+    // Mechanism cell（必填，始终创建）
+    MKFilterRelationshipCellModel *mechanismCell = [[MKFilterRelationshipCellModel alloc] init];
+    mechanismCell.index = 0;
+    mechanismCell.msg = @"Bluetooth Fix Mechanism";
+    mechanismCell.dataList = [self.protocol priorityDataList];
+    mechanismCell.dataListIndex = self.protocol.priority;
+    [self.section1List addObject:mechanismCell];
 
-    MKFilterRelationshipCellModel *cellModel2 = [[MKFilterRelationshipCellModel alloc] init];
-    cellModel2.index = 1;
-    cellModel2.msg = @"Scanning Type/PHY";
-    cellModel2.dataList = [self.protocol phyDataList];
-    cellModel2.dataListIndex = self.protocol.phy;
-    [self.section1List addObject:cellModel2];
+    // PHY cell（可选，硬件不支持 PHY 时跳过）
+    if ([self.protocol respondsToSelector:@selector(phyDataList)]) {
+        NSArray *phyList = [self.protocol phyDataList];
+        if (phyList && phyList.count > 0) {
+            MKFilterRelationshipCellModel *phyCell = [[MKFilterRelationshipCellModel alloc] init];
+            phyCell.index = 1;
+            phyCell.msg = @"Scanning Type/PHY";
+            phyCell.dataList = phyList;
+            phyCell.dataListIndex = self.protocol.phy;
+            [self.section1List addObject:phyCell];
+        }
+    }
 }
 
 - (void)loadSection2Datas {
@@ -330,12 +346,15 @@ MKFilterRelationshipCellDelegate>
 #pragma mark - UI
 - (void)loadSubViews {
     self.defaultTitle = [self.protocol pageTitle] ?: @"Bluetooth Fix";
+    NSString *bundleName = ([self.protocol respondsToSelector:@selector(bundleName)]
+                            && self.protocol.bundleName.length > 0)
+        ? self.protocol.bundleName : @"MKFilterPagesModule";
     if ([self.protocol saveIconName]) {
-        [self.rightButton setImage:LOADICON(@"MKFilterPagesModule", @"MKFilterBleFixController",
+        [self.rightButton setImage:LOADICON(bundleName, @"MKFilterBleFixController",
                                             [[self.protocol saveIconName] stringByAppendingString:@".png"])
                          forState:UIControlStateNormal];
     } else {
-        [self.rightButton setImage:LOADICON(@"MKFilterPagesModule", @"MKFilterBleFixController", @"mk_filterPages_slotSaveIcon.png")
+        [self.rightButton setImage:LOADICON(bundleName, @"MKFilterBleFixController", @"mk_filterPages_slotSaveIcon.png")
                          forState:UIControlStateNormal];
     }
     [self.view addSubview:self.tableView];

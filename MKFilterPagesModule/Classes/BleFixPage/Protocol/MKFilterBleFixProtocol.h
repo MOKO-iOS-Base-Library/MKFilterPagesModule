@@ -12,13 +12,39 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MKFilterBleFixProtocol <NSObject>
 
+#pragma mark - 基础配置（@required）
+
 /// 导航栏标题（defaultTitle），一般是 @"Bluetooth Fix"
 @property (nonatomic, copy) NSString *pageTitle;
 
 /// 保存按钮图标名（业务模块 asset 里的 png），比如 @"aj_slotSaveIcon"
 @property (nonatomic, copy) NSString *saveIconName;
 
-#pragma mark - section0: TextFieldCell（2 个）
+#pragma mark - 以下全部 @optional
+
+@optional
+
+/// 业务模块的 bundle 名，比如 @"MKLoRaWAN-PB"。nil 时用默认 @"MKFilterPagesModule"
+@property (nonatomic, copy, nullable) NSString *bundleName;
+
+// PHY 相关 —— 硬件不支持 PHY 时全部不实现（section1 只显示 Mechanism 一行）
+@property (nonatomic, assign) NSInteger phy;
+- (NSArray<NSString *> *)phyDataList;
+- (void)phyChanged:(NSInteger)dataListIndex;
+
+// ADV Name 过滤 —— 部分硬件不支持，不实现则点击时不 push
+- (void)pushFilterByAdvNameControllerWithNav:(UINavigationController *)nav;
+
+// Payload Contents section —— 整个 section 可选
+- (BOOL)hasPayloadContentsSection;
+- (NSString *)payloadContentsTitle;
+- (void)pushPayloadContentsControllerWithNav:(UINavigationController *)nav;
+
+#pragma mark - 以下全部 @required
+
+@required
+
+#pragma mark - section0: TextFieldCell（2 个，必填）
 
 /// Positioning Timeout：1~10，单位秒
 @property (nonatomic, copy) NSString *timeout;
@@ -28,56 +54,31 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)timeoutTextFieldValueChanged:(NSString *)value;
 - (void)numberOfMACTextFieldValueChanged:(NSString *)value;
 
-#pragma mark - section1: FilterRelationshipCell（2 个）
+#pragma mark - section1: Bluetooth Fix Mechanism（必填）
 
-/// Bluetooth Fix Mechanism：0=Time Priority, 1=RSSI Priority
 @property (nonatomic, assign) NSInteger priority;
-/// Scanning Type/PHY：0=1M PHY(BLE 4.x), 1=1M PHY(BLE 5), 2=1M PHY(BLE 4.x+BLE 5), 3=Coded PHY(BLE 5)
-@property (nonatomic, assign) NSInteger phy;
-
-/// Bluetooth Fix Mechanism 的 dataList
 - (NSArray<NSString *> *)priorityDataList;
-/// Scanning Type/PHY 的 dataList
-- (NSArray<NSString *> *)phyDataList;
-
 - (void)priorityChanged:(NSInteger)dataListIndex;
-- (void)phyChanged:(NSInteger)dataListIndex;
 
-#pragma mark - section2: NormalSliderCell（1 个）
+#pragma mark - section2: NormalSliderCell（1 个，必填）
 
-/// -127~0 dBm
 @property (nonatomic, assign) NSInteger rssi;
-
 - (void)rssiSliderValueChanged:(NSInteger)value;
 
-#pragma mark - section3: FilterRelationshipCell（1 个）
+#pragma mark - section3: FilterRelationshipCell（1 个，必填）
 
-/// Filter Relationship：7 种组合，见 section3 dataList
 @property (nonatomic, assign) NSInteger relationship;
-
 - (NSArray<NSString *> *)relationshipDataList;
 - (void)relationshipChanged:(NSInteger)dataListIndex;
 
-#pragma mark - section4: SettingTextCell（固定 3 个 → push 到基础库 MAC/ADV Name + 自建 RawData）
+#pragma mark - section4: SettingTextCell（3 个）
 
-/// push 哪个子 Controller
 - (void)pushFilterByMACControllerWithNav:(UINavigationController *)nav;
-- (void)pushFilterByAdvNameControllerWithNav:(UINavigationController *)nav;
 - (void)pushFilterByRawDataControllerWithNav:(UINavigationController *)nav;
 
-#pragma mark - section5: SettingTextCell（可选，payload/report contents）
-
-/// 是否显示 section5
-- (BOOL)hasPayloadContentsSection;
-/// section5 标题，比如 @"Report Contents Selection"
-- (NSString *)payloadContentsTitle;
-/// 点击 section5 第一行 push 哪个 Controller
-- (void)pushPayloadContentsControllerWithNav:(UINavigationController *)nav;
-
-#pragma mark - 核心
+#pragma mark - 核心（必填）
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
-
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
