@@ -6,7 +6,7 @@
 //  通用的 filter 关系/枚举选择 cell，所有业务模块 BleFixController 里用的自定义 FilterRelationshipCell 统一到这个
 //
 
-#import "MKBaseTableViewCell.h"
+#import "MKBaseCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface MKFilterRelationshipCell : MKBaseTableViewCell
+@interface MKFilterRelationshipCell : MKBaseCell
 
 @property (nonatomic, strong) MKFilterRelationshipCellModel *dataModel;
 
