@@ -8,23 +8,21 @@
 #import "MKFilterRelationshipCell.h"
 #import "Masonry.h"
 #import "MKMacroDefines.h"
-#import "UIView+MKAdd.h"
+#import "MKCustomUIAdopter.h"
+#import "MKPickerView.h"
+
+@implementation MKFilterRelationshipCellModel
+@end
 
 @interface MKFilterRelationshipCell ()
 
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *msgLabel;
 
-@property (nonatomic, strong) UIView *buttonContainer;
-
-@property (nonatomic, strong) NSMutableArray<UIButton *> *buttons;
+@property (nonatomic, strong) UIButton *rightButton;
 
 @end
 
 @implementation MKFilterRelationshipCell
-
-- (void)dealloc {
-    NSLog(@"MKFilterRelationshipCell销毁");
-}
 
 + (instancetype)initCellWithTableView:(UITableView *)tableView {
     static NSString *cellId = @"MKFilterRelationshipCellId";
@@ -38,105 +36,85 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self setupUI];
+        [self.contentView addSubview:self.msgLabel];
+        [self.contentView addSubview:self.rightButton];
     }
     return self;
 }
 
-#pragma mark - setupUI
-- (void)setupUI {
-    self.contentView.backgroundColor = UIColor.whiteColor;
-
-    self.titleLabel = [[UILabel alloc] init];
-    self.titleLabel.textColor = DEFAULT_TEXT_COLOR;
-    self.titleLabel.font = MKFont(13.f);
-    [self.contentView addSubview:self.titleLabel];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(15);
-        make.right.mas_equalTo(-15);
-        make.top.mas_equalTo(10);
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self.msgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(15.f);
+        make.right.mas_equalTo(self.contentView.mas_centerX).mas_offset(-3.f);
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        make.height.mas_equalTo(MKFont(15.f).lineHeight);
     }];
-
-    self.buttonContainer = [[UIView alloc] init];
-    [self.contentView addSubview:self.buttonContainer];
-    [self.buttonContainer mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(15);
-        make.right.mas_equalTo(-15);
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
-        make.bottom.mas_equalTo(-10);
+    [self.rightButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.contentView.mas_centerX).mas_offset(1.f);
+        make.right.mas_equalTo(-15.f);
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        make.height.mas_equalTo(30.f);
     }];
 }
 
-- (void)setDataModel:(MKFilterRelationshipCellModel *)dataModel {
-    _dataModel = dataModel;
-    self.titleLabel.text = dataModel.msg;
-
-    // 清除旧按钮
-    for (UIButton *btn in self.buttons) {
-        [btn removeFromSuperview];
+#pragma mark - event method
+- (void)rightButtonPressed {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MKTextFieldNeedHiddenKeyboard" object:nil];
+    if (!ValidArray(self.dataModel.dataList)) {
+        return;
     }
-    [self.buttons removeAllObjects];
-
-    // 创建新按钮
-    CGFloat btnWidth = [self buttonWidthForCount:dataModel.dataList.count];
-    CGFloat spacing = 5.f;
-    for (NSUInteger i = 0; i < dataModel.dataList.count; i++) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setTitle:dataModel.dataList[i] forState:UIControlStateNormal];
-        btn.titleLabel.font = MKFont(12.f);
-        btn.layer.masksToBounds = YES;
-        btn.layer.cornerRadius = 4.f;
-        btn.tag = i;
-        [btn addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-        [self.buttonContainer addSubview:btn];
-        [self.buttons addObject:btn];
-
-        // button 布局：从左到右
-        CGFloat x = i * (btnWidth + spacing);
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(x);
-            make.width.mas_equalTo(btnWidth);
-            make.top.mas_equalTo(0);
-            make.height.mas_equalTo(30);
-        }];
-    }
-
-    [self updateButtonSelectedState];
-}
-
-- (CGFloat)buttonWidthForCount:(NSUInteger)count {
-    CGFloat containerWidth = [UIScreen mainScreen].bounds.size.width - 30;
-    CGFloat spacing = 5.f;
-    return (containerWidth - spacing * (count - 1)) / count;
-}
-
-- (void)updateButtonSelectedState {
-    for (NSUInteger i = 0; i < self.buttons.count; i++) {
-        UIButton *btn = self.buttons[i];
-        if (i == self.dataModel.dataListIndex) {
-            [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-            btn.backgroundColor = DEFAULT_COLOR;
-        } else {
-            [btn setTitleColor:DEFAULT_TEXT_COLOR forState:UIControlStateNormal];
-            btn.backgroundColor = RGBCOLOR(242, 242, 242);
+    NSInteger index = 0;
+    for (NSInteger i = 0; i < self.dataModel.dataList.count; i++) {
+        if ([self.rightButton.titleLabel.text isEqualToString:self.dataModel.dataList[i]]) {
+            index = i;
+            break;
         }
     }
+    MKPickerView *pickView = [[MKPickerView alloc] init];
+    [pickView showPickViewWithDataList:self.dataModel.dataList selectedRow:index block:^(NSInteger currentRow) {
+        self.dataModel.dataListIndex = currentRow;
+        [self.rightButton setTitle:self.dataModel.dataList[currentRow] forState:UIControlStateNormal];
+        if ([self.delegate respondsToSelector:@selector(mk_filterRelationshipCell:relationshipChanged:dataListIndex:)]) {
+            [self.delegate mk_filterRelationshipCell:self
+                                 relationshipChanged:self.dataModel.index
+                                       dataListIndex:currentRow];
+        }
+    }];
 }
 
-- (void)buttonTapped:(UIButton *)sender {
-    if (!self.dataModel) return;
-    NSUInteger oldIndex = self.dataModel.dataListIndex;
-    NSUInteger newIndex = sender.tag;
-    if (oldIndex == newIndex) return;
-
-    self.dataModel.dataListIndex = newIndex;
-    [self updateButtonSelectedState];
-
-    if (self.delegate && [self.delegate respondsToSelector:@selector(mk_filterRelationshipCell:relationshipChanged:dataListIndex:)]) {
-        [self.delegate mk_filterRelationshipCell:self
-                               relationshipChanged:self.dataModel.index
-                                     dataListIndex:newIndex];
+#pragma mark - setter
+- (void)setDataModel:(MKFilterRelationshipCellModel *)dataModel {
+    _dataModel = dataModel;
+    if (!_dataModel || ![_dataModel isKindOfClass:MKFilterRelationshipCellModel.class]) {
+        return;
     }
+    self.msgLabel.text = SafeStr(_dataModel.msg);
+    if (!ValidArray(_dataModel.dataList) || _dataModel.dataListIndex >= _dataModel.dataList.count) {
+        return;
+    }
+    [self.rightButton setTitle:_dataModel.dataList[_dataModel.dataListIndex] forState:UIControlStateNormal];
+}
+
+#pragma mark - getter
+- (UILabel *)msgLabel {
+    if (!_msgLabel) {
+        _msgLabel = [[UILabel alloc] init];
+        _msgLabel.textAlignment = NSTextAlignmentLeft;
+        _msgLabel.textColor = DEFAULT_TEXT_COLOR;
+        _msgLabel.font = MKFont(13.f);
+    }
+    return _msgLabel;
+}
+
+- (UIButton *)rightButton {
+    if (!_rightButton) {
+        _rightButton = [MKCustomUIAdopter customButtonWithTitle:@""
+                                                         target:self
+                                                         action:@selector(rightButtonPressed)];
+        _rightButton.titleLabel.font = MKFont(12.f);
+    }
+    return _rightButton;
 }
 
 @end

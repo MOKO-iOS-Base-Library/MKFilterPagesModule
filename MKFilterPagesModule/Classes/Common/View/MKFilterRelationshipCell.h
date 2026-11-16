@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@class MKFilterRelationshipCell;
+
 @protocol MKFilterRelationshipCellDelegate <NSObject>
 
 /// 某个 relationship cell 的选中项发生变化

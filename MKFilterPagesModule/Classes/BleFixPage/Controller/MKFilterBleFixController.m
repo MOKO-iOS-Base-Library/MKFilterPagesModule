@@ -85,7 +85,6 @@ MKFilterRelationshipCellDelegate>
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 2) return 90.f;
-    if (indexPath.section == 1 || indexPath.section == 3) return 80.f;
     return 44.f;
 }
 
