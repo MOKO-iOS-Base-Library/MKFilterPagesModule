@@ -32,7 +32,7 @@ mk_textSwitchCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *section2List;   // NormalTextCell, 原始数据类型（由 Protocol 决定）
 
-@property (nonatomic, weak) id<MKFilterByRawDataProtocol> protocol;
+@property (nonatomic, strong) id<MKFilterByRawDataProtocol> protocol;
 
 @end
 

@@ -41,7 +41,7 @@ MKFilterRelationshipCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *headerList;
 
-@property (nonatomic, weak) id<MKFilterBleFixProtocol> protocol;
+@property (nonatomic, strong) id<MKFilterBleFixProtocol> protocol;
 
 @end
 
