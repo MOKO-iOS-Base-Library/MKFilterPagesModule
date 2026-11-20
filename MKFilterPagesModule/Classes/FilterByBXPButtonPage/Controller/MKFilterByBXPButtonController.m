@@ -225,9 +225,7 @@ mk_textSwitchCellDelegate>
 #pragma mark - UI
 - (void)loadSubViews {
     self.defaultTitle = self.protocol.pageTitle;
-    NSString *bundleName = @"MKLoRaCommonModule";
-    [self.rightButton setImage:LOADICON(bundleName, @"MKFilterByBXPButtonController", @"mk_loraModule_loraDeviceMode_slotSaveIcon.png")
-                     forState:UIControlStateNormal];
+    [self.rightButton setImage:LOADICON(@"MKFilterPagesModule", @"MKFilterByBXPButtonController", @"mk_filterPages_slotSaveIcon.png") forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
