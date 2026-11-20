@@ -195,7 +195,7 @@ MKFilterNormalTextFieldCellDelegate>
 - (void)loadSubViews {
     self.defaultTitle = self.protocol.pageTitle;
     NSString *bundleName = @"MKLoRaCommonModule";
-    [self.rightButton setImage:LOADICON(bundleName, @"MKFilterByUIDController", @"mk_loraModule_loraDeviceMode_slotSaveIcon@2x.png")
+    [self.rightButton setImage:LOADICON(bundleName, @"MKFilterByUIDController", @"mk_loraModule_loraDeviceMode_slotSaveIcon.png")
                      forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
