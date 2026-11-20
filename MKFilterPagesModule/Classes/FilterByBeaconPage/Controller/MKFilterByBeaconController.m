@@ -260,7 +260,9 @@ MKFilterBeaconCellDelegate>
 - (void)loadSubViews {
     self.defaultTitle = self.protocol.pageTitle;
     
-    [self.rightButton setImage:LOADICON(@"MKFilterPagesModule", @"MKFilterByBeaconController", @"mk_filterPages_slotSaveIcon@2x.png") forState:UIControlStateNormal];
+    NSString *bundleName = @"MKFilterPagesModule";
+    [self.rightButton setImage:LOADICON(bundleName, @"MKFilterByBeaconController", @"mk_filterPages_slotSaveIcon@2x.png")
+                     forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
