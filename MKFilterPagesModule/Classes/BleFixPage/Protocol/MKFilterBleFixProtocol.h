@@ -17,15 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 导航栏标题（defaultTitle），一般是 @"Bluetooth Fix"
 @property (nonatomic, copy) NSString *pageTitle;
 
-/// 保存按钮图标名（业务模块 asset 里的 png），比如 @"aj_slotSaveIcon"
-@property (nonatomic, copy) NSString *saveIconName;
-
 #pragma mark - 以下全部 @optional
 
 @optional
-
-/// 业务模块的 bundle 名，比如 @"MKLoRaWAN-PB"。nil 时用默认 @"MKFilterPagesModule"
-@property (nonatomic, copy, nullable) NSString *bundleName;
 
 // PHY 相关 —— 硬件不支持 PHY 时全部不实现（section1 只显示 Mechanism 一行）
 @property (nonatomic, assign) NSInteger phy;

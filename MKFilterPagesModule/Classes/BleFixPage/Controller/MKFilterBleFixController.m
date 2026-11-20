@@ -345,17 +345,8 @@ MKFilterRelationshipCellDelegate>
 #pragma mark - UI
 - (void)loadSubViews {
     self.defaultTitle = [self.protocol pageTitle] ?: @"Bluetooth Fix";
-    NSString *bundleName = ([self.protocol respondsToSelector:@selector(bundleName)]
-                            && self.protocol.bundleName.length > 0)
-        ? self.protocol.bundleName : @"MKFilterPagesModule";
-    if ([self.protocol saveIconName]) {
-        [self.rightButton setImage:LOADICON(bundleName, @"MKFilterBleFixController",
-                                            [[self.protocol saveIconName] stringByAppendingString:@".png"])
-                         forState:UIControlStateNormal];
-    } else {
-        [self.rightButton setImage:LOADICON(bundleName, @"MKFilterBleFixController", @"mk_filterPages_slotSaveIcon.png")
-                         forState:UIControlStateNormal];
-    }
+    [self.rightButton setImage:LOADICON(@"MKFilterPagesModule", @"MKFilterBleFixController", @"mk_filterPages_slotSaveIcon@2x.png")
+                     forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
